@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "draft-tracking-app"
+    }
+  },
+  "defaultProject": "draft-tracking-app",
+  "cli": {
+    "analytics": "6d9b4f75-30ec-4edf-bc42-107669281813"
+  }
 }

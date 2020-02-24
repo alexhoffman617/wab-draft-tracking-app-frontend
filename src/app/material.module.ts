@@ -1,55 +1,12 @@
-import { LayoutModule } from '@angular/cdk/layout'
-import { NgModule } from '@angular/core'
-import {
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatNativeDateModule,
-  MatRadioModule,
-  MatSelectModule,
-  MatStepperModule,
-  MatTooltipModule,
-  MatOptionModule,
-  MatTableModule,
-  MatChipsModule,
-  MatMenuModule,
-  MatExpansionModule,
-  MatIconModule,
-  MatSnackBarModule,
-} from '@angular/material'
+import { LayoutModule } from "@angular/cdk/layout";
+import { NgModule } from "@angular/core";
+import { MatButtonModule } from "@angular/material/button";
 
-const materialModules = [
-  LayoutModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatNativeDateModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatRadioModule,
-  MatSelectModule,
-  MatStepperModule,
-  MatTooltipModule,
-  MatOptionModule,
-  MatTableModule,
-  MatChipsModule,
-  MatMenuModule,
-  MatExpansionModule,
-  MatIconModule,
-  MatSnackBarModule
-]
+const materialModules = [LayoutModule, MatButtonModule];
 
 @NgModule({
   declarations: [],
   imports: [materialModules],
-  exports: [materialModules],
+  exports: [materialModules]
 })
 export class MaterialModule {}
