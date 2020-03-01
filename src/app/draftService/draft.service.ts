@@ -16,14 +16,14 @@ export class DraftService {
 
   getPicks(): Observable<any> {
     return this.http.get(
-      "http://wab-draft-app-backend.herokuapp.com/api/sample/last-picks"
+      "https://wab-draft-app-backend.herokuapp.com/api/sample/last-picks"
       // "http://localhost:5000/api/sample/last-picks"
     );
   }
 
   draft(playerName, playerId, owner, amount) {
     return this.http.post(
-      "http://wab-draft-app-backend.herokuapp.com/api/sample",
+      "https://wab-draft-app-backend.herokuapp.com/api/sample",
       // "http://localhost:5000/api/sample",
       {
         playerName: playerName,
