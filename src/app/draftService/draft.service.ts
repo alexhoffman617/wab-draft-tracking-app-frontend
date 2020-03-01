@@ -2,35 +2,42 @@ import { Players } from "./../players";
 import { IPlayer } from "./../models";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable, of } from "rxjs";
+import { Observable, of, BehaviorSubject } from "rxjs";
+import * as io from "socket.io-client";
 
 @Injectable({
   providedIn: "root"
 })
 export class DraftService {
-  constructor(private http: HttpClient) {}
+  url = true
+    ? "http://localhost:5000"
+    : "https://wab-draft-app-backend.herokuapp.com";
+  socket;
+  $previousPicks = new BehaviorSubject([]);
+
+  constructor(private http: HttpClient) {
+    this.http
+      .get<any[]>(`${this.url}/api/sample/last-picks`)
+      .subscribe(picks => {
+        this.$previousPicks.next(picks);
+      });
+    this.socket = io(this.url);
+    this.socket.on("lastPicks", data => {
+      this.$previousPicks.next(data);
+    });
+  }
 
   getPlayers(): Observable<IPlayer[]> {
     return of(Players);
   }
 
-  getPicks(): Observable<any> {
-    return this.http.get(
-      "https://wab-draft-app-backend.herokuapp.com/api/sample/last-picks"
-      // "http://localhost:5000/api/sample/last-picks"
-    );
-  }
-
-  draft(playerName, playerId, owner, amount) {
-    return this.http.post(
-      "https://wab-draft-app-backend.herokuapp.com/api/sample",
-      // "http://localhost:5000/api/sample",
-      {
-        playerName: playerName,
-        playerId: playerId,
-        owner: owner,
-        amount: amount
-      }
-    );
+  draft(playerName, playerId, owner, amount, league) {
+    this.socket.emit("draft", {
+      playerName: playerName,
+      playerId: playerId,
+      owner: owner,
+      amount: amount,
+      league: league
+    });
   }
 }

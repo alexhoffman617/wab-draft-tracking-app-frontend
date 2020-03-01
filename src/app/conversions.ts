@@ -1,5 +1,3 @@
-import { find } from "rxjs/operators";
-
 export const ProTeamConversion = [
   { name: "Orioles", abbreviation: "BAL", dbValue: 1 },
   { name: "Red Sox", abbreviation: "BOS", dbValue: 2 },
@@ -54,14 +52,24 @@ export function getPositions(positions: number[]): string[] {
 }
 
 export const Owners = [
-  "Adam Fromal",
-  "Arjun Baradwaj",
-  "Brendan Prin",
-  "Bretton McIlrath",
-  "Chris Glazier",
-  "Eric Fleury",
-  "Jacob Newcomer",
-  "Michael Tumey",
-  "Robert Ray",
-  'Alex "Shorty" Hoffman'
+  { display: "Adam Fromal", dbValue: "Adam" },
+  { display: "Arjun Baradwaj", dbValue: "Arjun" },
+  { display: "Brendan Prin", dbValue: "Brendan" },
+  { display: "Bretton McIlrath", dbValue: "Bretton" },
+  { display: "Chris Glazier", dbValue: "Chris" },
+  { display: "Eric Fleury", dbValue: "Eric" },
+  { display: "Jacob Newcomer", dbValue: "Jacob" },
+  { display: "Michael Tumey", dbValue: "Michael" },
+  { display: "Robert Ray", dbValue: "Rob" },
+  { display: 'Alex "Shorty" Hoffman', dbValue: "Shorty" }
 ];
+
+export function getDBOwner(displayValue) {
+  const conversion = Owners.find(owner => owner.display === displayValue);
+  return conversion ? conversion.dbValue : displayValue;
+}
+
+export function getDisplayOwner(dbValue) {
+  const conversion = Owners.find(owner => owner.dbValue === dbValue);
+  return conversion ? conversion.display : dbValue;
+}

@@ -14,7 +14,7 @@ import { EventEmitter } from "@angular/core";
 export class SelectOwnerComponent implements OnInit {
   @Output() setOwner = new EventEmitter();
   myControl = new FormControl();
-  owners: Array<string> = Owners;
+  owners: Array<any> = Owners;
   filteredOwners: Observable<string[]>;
   constructor() {}
 
@@ -34,8 +34,8 @@ export class SelectOwnerComponent implements OnInit {
       filterValue.split(" ").forEach(word => {
         if (
           !(
-            owner.toLowerCase().includes(word) ||
-            owner.toLowerCase().includes(word)
+            owner.display.toLowerCase().includes(word) ||
+            owner.display.toLowerCase().includes(word)
           )
         ) {
           includes = false;

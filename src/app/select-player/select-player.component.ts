@@ -36,6 +36,13 @@ export class SelectPlayerComponent implements OnInit {
 
     return this.players.filter(player => {
       let includes = true;
+      if (
+        this.draftService.$previousPicks.value.find(pick => {
+          return pick.playerId === player.id.toString();
+        })
+      ) {
+        includes = false;
+      }
       filterValue.split(" ").forEach(word => {
         if (
           !(

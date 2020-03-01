@@ -12,8 +12,11 @@
     #auto="matAutocomplete"
     [displayWith]="displayFn"
   >
-    <mat-option *ngFor="let owner of filteredOwners | async" [value]="owner">
-      {{ owner }}
+    <mat-option
+      *ngFor="let owner of filteredOwners | async"
+      [value]="owner.display"
+    >
+      {{ owner.display }}
     </mat-option>
   </mat-autocomplete>
 </mat-form-field>

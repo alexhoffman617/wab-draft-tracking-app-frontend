@@ -3,6 +3,7 @@ import { IPlayer } from "./../models";
 import { Observable } from "rxjs";
 import { DraftService } from "./../draftService/draft.service";
 import { Component, OnInit } from "@angular/core";
+import { getDisplayOwner } from "../conversions";
 
 @Component({
   selector: "app-previous-picks",
@@ -16,10 +17,10 @@ export class PreviousPicksComponent implements OnInit {
     this.draftService.getPlayers().subscribe(players => {
       this.players = players;
     });
-    this.$picks = this.draftService.getPicks().pipe(
+    this.$picks = this.draftService.$previousPicks.pipe(
       map(picks =>
-        picks.map((pick, index) => {
-          return { ...pick };
+        picks.map(pick => {
+          return { ...pick, owner: getDisplayOwner(pick.owner) };
         })
       )
     );
