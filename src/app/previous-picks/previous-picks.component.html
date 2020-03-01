@@ -1,9 +1,7 @@
-<div
-  *ngFor="let pick of ($picks | async)?.reverse() | slice: 0:4; let i = index"
->
+<div *ngFor="let pick of $picks | async">
   <mat-card class="pick-card" fxLayout="row" fxLayoutAlign="center center">
     <span>{{ pick.pickNumber }}</span>
-    <div fxFlex>
+    <div fxFlex="20%">
       <app-display-player
         *ngIf="getPlayer(pick.playerId); else blankImage"
         [player]="getPlayer(pick.playerId)"
@@ -16,6 +14,7 @@
       </ng-template>
     </div>
 
-    <span fxFlex>${{ pick.amount }} - {{ pick.owner }}</span>
+    <span fxFlex="20%">${{ pick.amount }} - {{ pick.owner }}</span>
+    <span fxFlex></span>
   </mat-card>
 </div>

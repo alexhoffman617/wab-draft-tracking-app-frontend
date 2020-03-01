@@ -19,7 +19,7 @@ export class PreviousPicksComponent implements OnInit {
     this.$picks = this.draftService.getPicks().pipe(
       map(picks =>
         picks.map((pick, index) => {
-          return { ...pick, pickNumber: index + 1 };
+          return { ...pick };
         })
       )
     );
@@ -29,6 +29,6 @@ export class PreviousPicksComponent implements OnInit {
   ngOnInit(): void {}
 
   getPlayer(playerId: string) {
-    return this.players.find(player => player.id === playerId);
+    return this.players.find(player => player.id.toString() === playerId);
   }
 }
