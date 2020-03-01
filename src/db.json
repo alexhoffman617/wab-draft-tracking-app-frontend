@@ -731,6 +731,13 @@
       "owner": "Alex \"Shorty\" Hoffman",
       "amount": 10,
       "id": 11
+    },
+    {
+      "playerName": "Gary Sanchez",
+      "playerId": 31095,
+      "owner": "Alex \"Shorty\" Hoffman",
+      "amount": 10,
+      "id": 12
     }
   ]
 }

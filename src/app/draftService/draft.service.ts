@@ -19,8 +19,8 @@ export class DraftService {
 
   draft(playerName, playerId, owner, amount) {
     this.http
-      .post("http://localhost:5000/api/sample", {
-        pickNumber: 11,
+      .post("http://wab-draft-app-backend.herokuapp.com/api/sample", {
+        pickNumber: 12,
         playerName: playerName,
         playerId: playerId,
         owner: owner,
