@@ -1,0 +1,21 @@
+<div
+  *ngFor="let pick of ($picks | async)?.reverse() | slice: 0:4; let i = index"
+>
+  <mat-card class="pick-card" fxLayout="row" fxLayoutAlign="center center">
+    <span>{{ pick.pickNumber }}</span>
+    <div fxFlex>
+      <app-display-player
+        *ngIf="getPlayer(pick.playerId); else blankImage"
+        [player]="getPlayer(pick.playerId)"
+      >
+      </app-display-player>
+      <ng-template #blankImage>
+        <img
+          src="https://a.espncdn.com/combiner/i?img=/games/lm-static/flb/images/nomug.png&w=120&h=120&cb=1"
+        />
+      </ng-template>
+    </div>
+
+    <span fxFlex>${{ pick.amount }} - {{ pick.owner }}</span>
+  </mat-card>
+</div>

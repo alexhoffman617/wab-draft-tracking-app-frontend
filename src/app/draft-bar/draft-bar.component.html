@@ -1,0 +1,29 @@
+<div
+  class="draft-bar-container"
+  fxFlex
+  fxLayout="row"
+  fxLayoutAlign="center center"
+>
+  <div fxFlex="25" fxLayoutAlign="center center">
+    <app-display-player
+      *ngIf="player && player.firstName"
+      [player]="player"
+    ></app-display-player>
+  </div>
+  <div fxFlex="25">
+    <app-select-player (setPlayer)="setPlayer($event)"></app-select-player>
+  </div>
+  <div fxFlex="25">
+    <app-select-owner (setOwner)="setOwner($event)"></app-select-owner>
+  </div>
+
+  <div fxFlex="25">
+    <mat-form-field>
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" placeholder="Amount" [(ngModel)]="amount" />
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" (click)="draft()">Draft</button>
+  </div>
+</div>

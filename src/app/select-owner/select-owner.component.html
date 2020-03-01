@@ -1,0 +1,19 @@
+<mat-form-field>
+  <input
+    type="text"
+    placeholder="Owner"
+    aria-label="Number"
+    matInput
+    [formControl]="myControl"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete
+    autoActiveFirstOption
+    #auto="matAutocomplete"
+    [displayWith]="displayFn"
+  >
+    <mat-option *ngFor="let owner of filteredOwners | async" [value]="owner">
+      {{ owner }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
