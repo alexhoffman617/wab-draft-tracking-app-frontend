@@ -9,7 +9,7 @@ import * as io from "socket.io-client";
   providedIn: "root"
 })
 export class DraftService {
-  url = true
+  url = false
     ? "http://localhost:5000"
     : "https://wab-draft-app-backend.herokuapp.com";
   socket;
