@@ -17,7 +17,7 @@ export class DisplayPlayerComponent implements OnInit {
   }
 
   getPositionDisplay() {
-    return getPositions(this.player.eligibleSlots)[0];
+    return getPositions(this.player.eligibleSlots).join(", ");
   }
 
   getTeamDisplay() {

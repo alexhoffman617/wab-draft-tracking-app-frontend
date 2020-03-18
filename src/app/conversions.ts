@@ -36,8 +36,17 @@ export function getProTeam(dbValue: number) {
 }
 
 export const PositionConversion = [
-  { position: "C", dbValue: 12 },
-  { position: "1B", dbValue: 7 }
+  { position: "C", dbValue: 0 },
+  { position: "1B", dbValue: 1 },
+  { position: "2B", dbValue: 2 },
+  { position: "3B", dbValue: 3 },
+  { position: "SS", dbValue: 4 },
+  { position: "LF", dbValue: 8 },
+  { position: "CF", dbValue: 9 },
+  { position: "RF", dbValue: 10 },
+  { position: "DH", dbValue: 11 },
+  { position: "SP", dbValue: 14 },
+  { position: "RP", dbValue: 15 }
 ];
 
 export function getPositions(positions: number[]): string[] {

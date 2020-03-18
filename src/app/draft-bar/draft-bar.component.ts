@@ -16,7 +16,7 @@ export class DraftBarComponent implements OnInit {
   @ViewChild(SelectPlayerComponent, { static: false }) playerComponent;
   owner: string;
   amount: string;
-  league: string;
+  league: string = "Major";
   player: any = "";
   filteredPlayers: Observable<IPlayer[]>;
   constructor(private draftService: DraftService) {}

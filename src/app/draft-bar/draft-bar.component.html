@@ -28,10 +28,7 @@
     <mat-form-field>
       <mat-label>Major/Minor</mat-label>
       <mat-select [(ngModel)]="league">
-        <mat-option
-          *ngFor="let option of ['', 'Major', 'Minor']"
-          [value]="option"
-        >
+        <mat-option *ngFor="let option of ['Major', 'Minor']" [value]="option">
           {{ option }}
         </mat-option>
       </mat-select>
