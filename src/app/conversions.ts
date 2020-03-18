@@ -60,7 +60,7 @@ export const Owners = [
   { display: "Eric Fleury", dbValue: "Eric" },
   { display: "Jacob Newcomer", dbValue: "Jacob" },
   { display: "Michael Tumey", dbValue: "Michael" },
-  { display: "Robert Ray", dbValue: "Rob" },
+  { display: "Robert Ray", dbValue: "Robert" },
   { display: 'Alex "Shorty" Hoffman', dbValue: "Shorty" }
 ];
 
