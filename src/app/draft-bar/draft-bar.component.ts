@@ -48,7 +48,7 @@ export class DraftBarComponent implements OnInit {
     this.player = null;
     this.owner = "";
     this.amount = null;
-    this.league = "";
+    this.league = "Major";
     this.playerComponent.clear();
     this.ownerComponent.clear();
   }
