@@ -13,9 +13,10 @@ import { SelectPlayerComponent } from './select-player/select-player.component';
 import { SelectOwnerComponent } from './select-owner/select-owner.component';
 import { DraftBarComponent } from './draft-bar/draft-bar.component';
 import { PreviousPicksComponent } from './previous-picks/previous-picks.component';
+import { NominationComponent } from './nomination/nomination.component';
 
 @NgModule({
-  declarations: [AppComponent, DraftPageComponent, DisplayPlayerComponent, SelectPlayerComponent, SelectOwnerComponent, DraftBarComponent, PreviousPicksComponent],
+  declarations: [AppComponent, DraftPageComponent, DisplayPlayerComponent, SelectPlayerComponent, SelectOwnerComponent, DraftBarComponent, PreviousPicksComponent, NominationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
