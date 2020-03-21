@@ -21,6 +21,8 @@ export class DisplayPlayerComponent implements OnInit {
   }
 
   getTeamDisplay() {
-    return getProTeam(this.player.proTeamId).name;
+    return getProTeam(this.player.proTeamId)
+      ? getProTeam(this.player.proTeamId).name
+      : "FA";
   }
 }
