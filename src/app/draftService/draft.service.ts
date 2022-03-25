@@ -9,7 +9,7 @@ import * as io from "socket.io-client";
   providedIn: "root"
 })
 export class DraftService {
-  url = false
+  url = true
     ? "http://localhost:5000"
     : "https://wab-draft-app-backend.herokuapp.com";
   socket;
@@ -38,6 +38,13 @@ export class DraftService {
       owner: owner,
       amount: amount,
       league: league
+    });
+  }
+
+  nominate(playerName, playerId) {
+    this.socket.emit("nominate", {
+      playerName: playerName,
+      playerId: playerId,
     });
   }
 }

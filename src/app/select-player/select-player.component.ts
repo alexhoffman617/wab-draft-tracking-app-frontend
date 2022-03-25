@@ -38,7 +38,7 @@ export class SelectPlayerComponent implements OnInit {
       let includes = true;
       if (
         this.draftService.$previousPicks.value.find(pick => {
-          return pick.playerId === player.id.toString();
+          return pick.playerId === player.id.toString() && !!pick.owner;
         })
       ) {
         includes = false;

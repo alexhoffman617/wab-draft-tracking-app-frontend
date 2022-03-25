@@ -1,0 +1,19 @@
+<div
+  class="draft-bar-container"
+  fxFlex
+  fxLayout="row"
+  fxLayoutAlign="left center"
+>
+  <div fxFlex="15" fxFlexOffset="6em">
+    <app-display-player
+      *ngIf="player && player.firstName"
+      [player]="player"
+    ></app-display-player>
+  </div>
+  <div fxFlex="15">
+    <app-select-player (setPlayer)="setPlayer($event)"></app-select-player>
+  </div>
+  <div fxFlex>
+    <button mat-raised-button color="primary" (click)="nominate()">Nominate</button>
+  </div>
+</div>
