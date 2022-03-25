@@ -23,15 +23,17 @@ export class NominationComponent implements OnInit {
   }
 
   getNominations() {
-    let result = Owners.sort((a, b) => {
+    const nomOwners =  Owners.filter(own => !!own.nom)
+    const nomOwnerCount = nomOwners.length
+    let result = nomOwners.sort((a, b) => {
       if (
-        a.nom >= (this.pickNumber - 1) % 10 &&
-        b.nom < (this.pickNumber - 1) % 10
+        (a.nom - 1) >= (this.pickNumber - 1) % nomOwnerCount &&
+        (b.nom - 1) < (this.pickNumber - 1) % nomOwnerCount
       ) {
         return -1;
       } else if (
-        a.nom < (this.pickNumber - 1) % 10 &&
-        b.nom >= (this.pickNumber - 1) % 10
+        (a.nom - 1) < (this.pickNumber - 1) % nomOwnerCount &&
+        (b.nom - 1) >= (this.pickNumber - 1) % nomOwnerCount
       ) {
         return 1;
       } else if (a.nom > b.nom) {
