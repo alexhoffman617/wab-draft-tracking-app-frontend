@@ -11,7 +11,7 @@ import * as io from "socket.io-client";
 export class DraftService {
   url = false
     ? "http://localhost:5000"
-    : "https://wab-draft-app-backend.herokuapp.com";
+    : "https://wab-draft-tracking-app-backend.onrender.com";
   socket;
   $previousPicks = new BehaviorSubject([]);
 
