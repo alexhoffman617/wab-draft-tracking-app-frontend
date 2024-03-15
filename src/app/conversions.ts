@@ -63,7 +63,7 @@ export function getPositions(positions: number[]): string[] {
 export const Owners = [
   { display: "Adam Fromal", dbValue: "Adam", nom: 2 },
   { display: "Arjun Baradwaj", dbValue: "Arjun", nom: 3 },
-  { display: "Brendan Prin", dbValue: "Brendan", nom: 10 },
+  { display: "Shashank Bharadwaj", dbValue: "Shashank", nom: 10 },
   { display: "Bretton McIlrath", dbValue: "Bretton", nom: 8 },
   { display: "Chris Glazier", dbValue: "Chris", nom: 9 },
   { display: "Eric Fleury", dbValue: "Eric", nom: 6 },
