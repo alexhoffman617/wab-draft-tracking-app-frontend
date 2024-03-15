@@ -1,0 +1,25 @@
+<div *ngFor="let pick of $picks | async" >
+  <mat-card class="pick-card" fxLayout="row" fxLayoutAlign="center center" [class.rob-bid-info]="!pick.owner">
+    <span class="pick-number"
+    >{{ pick.pickNumber }}</span>
+    <div fxFlex="20%">
+      <app-display-player
+        *ngIf="getPlayer(pick.playerId); else blankImage"
+        [player]="getPlayer(pick.playerId)"
+      >
+      </app-display-player>
+      <ng-template #blankImage>
+        <img
+          src="https://a.espncdn.com/combiner/i?img=/games/lm-static/flb/images/nomug.png&w=120&h=120&cb=1"
+        />
+        <div class="player-name">{{ pick.playerName }}</div>
+      </ng-template>
+    </div>
+
+    <span *ngIf="pick.owner" class="pick-info" fxFlex="20%"
+      >${{ pick.amount }} - {{ pick.owner }} ({{ pick.league }})</span
+    >
+
+    <span fxFlex></span>
+  </mat-card>
+</div>
