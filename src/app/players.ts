@@ -1,4 +1,4 @@
-import { IPlayer } from "./app/models";
+import { IPlayer } from "./models";
 
 const Catchers: IPlayer[] = [
     {
