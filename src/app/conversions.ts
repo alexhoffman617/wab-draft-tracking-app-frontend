@@ -61,16 +61,16 @@ export function getPositions(positions: number[]): string[] {
 }
 
 export const Owners = [
-  { display: "Adam Fromal", dbValue: "Adam", nom: 2 },
+  { display: "Adam Fromal", dbValue: "Adam", nom: 9 },
   { display: "Arjun Baradwaj", dbValue: "Arjun", nom: 3 },
   { display: "Shashank Bharadwaj", dbValue: "Shashank", nom: 10 },
-  { display: "Bretton McIlrath", dbValue: "Bretton", nom: 8 },
-  { display: "Chris Glazier", dbValue: "Chris", nom: 9 },
-  { display: "Eric Fleury", dbValue: "Eric", nom: 6 },
-  { display: "Jacob Newcomer", dbValue: "Jacob", nom: 1 },
+  { display: "Bretton McIlrath", dbValue: "Bretton", nom: 1 },
+  { display: "Chris Glazier", dbValue: "Chris", nom: 4 },
+  { display: "Eric Fleury", dbValue: "Eric", nom: 2 },
+  { display: "Jacob Newcomer", dbValue: "Jacob", nom: 8 },
   { display: "Michael Tumey", dbValue: "Michael", nom: 7 },
   { display: "Robert Ray", dbValue: "Robert", nom: 5 },
-  { display: 'Alex "Shorty" Hoffman', dbValue: "Shorty", nom: 4 }
+  { display: 'Alex "Shorty" Hoffman', dbValue: "Shorty", nom: 6 }
 ];
 
 export function getDBOwner(displayValue) {

@@ -123,7 +123,7 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy --base-href=https://alexhoffman617.github.io/wab-draft-tracking-app-frontend/"
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
