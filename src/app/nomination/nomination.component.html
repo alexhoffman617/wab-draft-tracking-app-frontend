@@ -1,6 +1,6 @@
 <h1 style="text-decoration: underline;">
   Nomination:
 </h1>
-<div *ngFor="let nom of getNominations(); let i = index">
+<div *ngFor="let nom of $nominationOrder | async; let i = index">
   <h2 [ngClass]="i === 0 ? 'current-selection' : ''">{{ nom }}</h2>
 </div>

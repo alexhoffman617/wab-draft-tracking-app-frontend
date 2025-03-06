@@ -14,6 +14,7 @@ export class DraftService {
     : "https://wab-draft-tracking-app-backend.onrender.com";
   socket;
   $previousPicks = new BehaviorSubject([]);
+  $nominationOrder = new BehaviorSubject([]);
 
   constructor(private http: HttpClient) {
     this.http
@@ -21,9 +22,17 @@ export class DraftService {
       .subscribe(picks => {
         this.$previousPicks.next(picks);
       });
+    this.http
+      .get<any[]>(`${this.url}/api/sample/nomination-order`)
+      .subscribe(nominationOrder => {
+        this.$nominationOrder.next(nominationOrder);
+      });
     this.socket = io(this.url);
     this.socket.on("lastPicks", data => {
       this.$previousPicks.next(data);
+    });
+    this.socket.on("nominationOrder", data => {
+      this.$nominationOrder.next(data);
     });
   }
 
